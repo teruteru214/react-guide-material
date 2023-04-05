@@ -27,16 +27,19 @@ const Timer = () => {
         setTime(prev => prev + 1);
       }, 1000);
     }
-    
+
     return () => {
       window.clearInterval(intervalId)
       // console.log('end');
     }
   }, [isRunning])
-  
+
+  document.title = 'counter:' + time;
+  window.localStorage.setItem('time-key', time);
+
   useEffect(() => {
     // // console.log('updated');
-    
+
     document.title = 'counter:' + time;
     window.localStorage.setItem('time-key', time);
 

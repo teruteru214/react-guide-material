@@ -10,6 +10,7 @@ import { useReducer, useState } from "react";
 // 純粋性（純粋関数）
 // 特定の引数に特定の戻り値
 const reducer = (prev, { type, step }) => {
+  const newState = { ...prev }
   switch (type) {
     case "+":
       return prev + step;
@@ -24,7 +25,7 @@ const reducer = (prev, { type, step }) => {
 const Example = () => {
   const [state, setState] = useState(0);
   const [rstate, dispatch] = useReducer(reducer, 0);
-  
+
   const step = 2;
   const countUp = () => {
     setState((prev) => {

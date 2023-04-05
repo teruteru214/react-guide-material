@@ -1,6 +1,5 @@
 import { useTheme } from "../context/ThemeContext"
 
-
 const Header = () => {
   const [theme, setTheme] = useTheme();
 
@@ -8,6 +7,7 @@ const Header = () => {
 
   const changeTheme = (e) => setTheme(e.target.value);
 
+  console.log('header');
   return (
     <header className={`content-${theme}`}>
       {THEMES.map((_theme) => {
